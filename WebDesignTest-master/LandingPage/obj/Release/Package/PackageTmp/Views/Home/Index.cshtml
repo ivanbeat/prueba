@@ -1,0 +1,85 @@
+﻿@model LandingPage.Models.Data
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="~/Content/StyleLandingDatos.css" rel="stylesheet" />
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="containt">
+            <div class="panelInfo background">
+                <div class="contentInfo">
+                    <div class="descripcion">
+                        <div class="container col-lg-12 col-md-12 col-sm-12">
+                            <div class="cardData text-dark col-sm-12">
+                                @using (Html.BeginForm("GetBoleta", "Home", FormMethod.Post, new { id = "form", @class = "" }))
+                                {
+                                    <div id="face" class="face face1">
+                                        <div class="content">
+                                            <div class="icon iconHover">
+                                                @*<h3><a> Zurich</a></h3>*@
+                                                <a id="upface" class="text-right" style="display: none; cursor: pointer;"><i class="fas fa-chevron-up"></i></a>
+                                                <h3 class="text-white" style=" margin-top: 20px;">
+                                                    <a>
+                                                        Zurich
+                                                    </a>
+                                                </h3>
+                                                <p class="p1">
+                                                    Bienvenido
+                                                </p>
+                                                <i class="fas fa-user-shield svgface"></i>
+                                                @*<p class="pface">Con más de 140 años de experiencia a nivel mundial brindamos seguros de protección integral para cuidar lo que más importa; desde tu auto, empresa, casa y salud </p>*@
+                                                <a id="downface" class="btn btn-primary text-white btn-face">
+                                                    Realizar pago!
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="face face2">
+                                        <div class="content text-left">
+                                            <img class="imgface" src="https://www.zurich.com.mx/-/media/af8989cfdd7049ee86735bdccc8d2e7e.ashx?h=71&la=es-mx&w=114" style="width: 57px" />
+                                            <div class="form-group" hidden>
+                                                <label for="saldoVencido" class="form-label">Nombre del titular</label>
+                                                @Html.TextBoxFor(p => p.nombre_contacto, new { @class = "form-control " })
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="saldoVencido" class="form-label">Póliza</label>
+                                                @Html.TextBoxFor(p => p.IdUnico, new { @class = "form-control", @required = "required" })
+                                                <div class="invalid-feedback">
+                                                    Ingresas Póliza correcta
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="saldoVencido" class="form-label">Teléfono</label>
+                                                @Html.TextBoxFor(p => p.Telefono, new { @class = "form-control ", @maxLength = "10", @required = "required" })
+                                                <div class="invalid-feedback">
+                                                    Ingresas Teléfono para notificaciones
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <div id="contentbtnSendCliente" class="form-group" style="">
+                                                    <input id="btnSendCliente" type="submit" class="btn btn-block btn-primary " value="Consultar Póliza" />
+                                                </div>
+                                                <div id="preloadertarget" class="spinner-border text-primary text-center" role="status" style="display: none;">
+                                                    <span class="visually-hidden"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/ScriptLanding.js"></script>
+<script src="~/Scripts/ScriptValidaciones.js"></script>

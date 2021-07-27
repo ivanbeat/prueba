@@ -1,0 +1,23 @@
+﻿    <script>
+        $('body').css("Background", "#f2f2f2");
+    </script>
+    <div class="container">
+
+        <div class="text-center">
+
+        </div>
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Upps!!</h1>
+            <p class="lead">algo salió mal</p>
+            <div class=" text-center animated fadeInUp">
+                <img src="~/Images/icoError.png" style="width: 150px;" />
+            </div>
+            <hr class="my-4">
+            <h3>@ViewBag.MessageError</h3>
+            <p>Página no está disponible</p>
+            <p class="lead">
+                @Html.ActionLink("Regresar", "Index", "")
+            </p>
+        </div>
+    </div>
+

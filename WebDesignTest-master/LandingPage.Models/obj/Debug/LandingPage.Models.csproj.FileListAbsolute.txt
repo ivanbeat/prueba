@@ -1,0 +1,17 @@
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\bin\Debug\LandingPage.Models.dll
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\bin\Debug\LandingPage.Models.pdb
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.dll
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.pdb
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\bin\Debug\LandingPage.Models.dll
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\bin\Debug\LandingPage.Models.pdb
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.csprojAssemblyReference.cache
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.csproj.CoreCompileInputs.cache
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.dll
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Debug\LandingPage.Models.pdb
+C:\Users\Iván\Downloads\WebDesignTest-master\WebDesignTest-master\LandingPage.Models\bin\Debug\LandingPage.Models.dll
+C:\Users\Iván\Downloads\WebDesignTest-master\WebDesignTest-master\LandingPage.Models\bin\Debug\LandingPage.Models.pdb
+C:\Users\Iván\Downloads\WebDesignTest-master\WebDesignTest-master\LandingPage.Models\obj\Debug\LandingPage.Models.csproj.AssemblyReference.cache
+C:\Users\Iván\Downloads\WebDesignTest-master\WebDesignTest-master\LandingPage.Models\obj\Debug\LandingPage.Models.csproj.CoreCompileInputs.cache
+C:\Users\Iván\Downloads\WebDesignTest-master\WebDesignTest-master\LandingPage.Models\obj\Debug\LandingPage.Models.dll
+C:\Users\Iván\Downloads\WebDesignTest-master\WebDesignTest-master\LandingPage.Models\obj\Debug\LandingPage.Models.pdb

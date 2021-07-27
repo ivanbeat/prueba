@@ -1,0 +1,334 @@
+﻿@model LandingPage.Models.Data
+@{
+    ViewBag.Title = "LandingPage";
+    var MontoCien = string.Format("{0:F}", Convert.ToDecimal(Convert.ToDecimal(Model.saldoVencido) * 1));
+    var MontoOchenta = string.Format("{0:F}", Convert.ToDecimal(Convert.ToDecimal(Model.saldoVencido) * 80) / 100);
+    var MontoSesenta = string.Format("{0:F}", Convert.ToDecimal(Convert.ToDecimal(Model.saldoVencido) * 60) / 100);
+}
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>*@
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.mask.min.js"></script>
+
+<div class="index-main-background "></div>
+<div class="container text-right text-white pt-5">
+    <h1 class="display-3">Zurich</h1>
+    @*<p class="index-title-span">Pago</p>*@
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div id="ContentPago" class="index-section-1 col-lg-6 col-md-6 col-sm-12 bg-white">
+
+            <div class="row">
+                @*<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <img src="https://app.datavoice.com.mx:490/GayossoLanding/Img/imgFamilia.png" width="100%" height="100%" />
+                    </div>*@
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fadeInUp">
+                    <div class="text-center">
+                        @if (!string.IsNullOrEmpty(ViewBag.Message))
+                        {
+                            <div class="contenedorBanco bg-white rounded-circle mt-lg-5 mt-sm-1 fadeInUp">
+                                <img src="~/Images/ok.png" width="100" />
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="contenedorBanco bg-white rounded-circle fadeInUp">
+                                <img src="~/Images/metodoPago.png" width="100" />
+                            </div>
+                        }
+                    </div>
+                    @if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+
+                        <div class="mb-2 mt-2 text-center">
+                            <h2 class="titleData mt-3">@Html.LabelFor(p => p.nombre_contacto, Model.nombre_contacto)</h2>
+                        </div>
+                        <div class="text-center mb-2">
+                            <h3 class="titleData"> @ViewBag.Message </h3>
+                        </div>
+                        <div class="mt-2 row g-2">
+                            <div class=" col-md-6 col-sm-12 ">
+                                <div class="form-group">
+                                    <label for="IdUnico" class="form-label">Póliza</label>
+                                    @Html.TextBoxFor(p => p.IdUnico, Model.IdUnico, new { @class = "form-control inputCallme text-black", @readonly = "readonly" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="saldoVencido" class="form-label">Saldo Actual</label>
+                                    @Html.TextBoxFor(p => p.saldoVencido, "$" + Model.saldoVencido.ToString(), new { @class = "form-control inputCallme text-blac", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("SendPago", "LandingPage", FormMethod.Post, new { id = "form", @class = "" }))
+                        {
+                            // content datos pago
+                            <div id="contentDataClient" class="mt-4">
+
+                                <div class="container text-center mt-lg-5 mt-sm-1 fadeInUp">
+                                    <h3>@Model.nombre_contacto</h3>
+                                    <h5>@ViewBag.Message</h5>
+                                </div>
+
+
+                                @Html.TextBoxFor(p => p.clavegrupo, Model.clavegrupo, new { @class = "form-control inputCallme", @readonly = "readonly", @hidden = "hidden" })
+                                <div class="mb-2 row" style="display: none;">
+                                    <label for="" class="col-sm-2 col-form-label">Nombre del Cliente</label>
+                                    <div class="col-sm-10">
+                                        @Html.TextBoxFor(p => p.nombre_contacto, Model.nombre_contacto, new { @class = "form-control-plaintext inputCallme", @readonly = "readonly" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="display: none;">
+                                    <label for="">Póliza</label>
+                                    @Html.TextBoxFor(p => p.IdAgrupado, Model.IdAgrupado, new { @class = "form-control inputCallme", @readonly = "readonly" })
+                                </div>
+
+                                <div class="row g-2">
+                                    <div class=" col-md-6 col-sm-12 ">
+                                        <div class="form-group">
+                                            <label for="IdUnico" class="form-label">Póliza</label>
+                                            @Html.TextBoxFor(p => p.IdUnico, Model.IdUnico, new { @class = "form-control inputCallme text-black", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="saldoVencido" class="form-label">Saldo Actual</label>
+                                            @Html.TextBoxFor(p => p.saldoVencido, "$" + Model.saldoVencido.ToString(), new { @class = "form-control inputCallme text-blac", @readonly = "readonly" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-sm-12 text-center mt-4 mb-4">
+                                    <h4 class="card-title">Forma de pago</h4>
+                                    @*<h5>Porcentaje de pago sobre saldo vencido</h5>*@
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 ">
+                                    <div class="bd-callout-primary bd-callout shadow-sm">
+                                        <label class="radio-label">
+                                            <input name="PostPago" type="radio" class="radioValorPago" value="@MontoCien" checked="checked" />
+                                            <div id="Op1" class="div-radio-label">
+                                                <h5>Pago a generar</h5>
+                                                <label class="text-muted" style="margin-bottom:0;">$<label class="inputFormatoVenta">@MontoCien</label> </label>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                @*<div class="col-md-12 col-sm-12">
+                                    <div name="content-bd-callout" class="bd-callout-primary bd-callout shadow-sm">
+                                        <label class="radio-label">
+                                            <input name="PostPago" type="radio" class="radioValorPago" value="@MontoOchenta" />
+                                            <div id="Op2" class="div-radio-label">
+                                                <h5>Pago del 80%</h5>
+                                                <label class="text-muted" style="margin-bottom:0;">$<label class="inputFormatoVenta">@MontoOchenta</label> </label>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="bd-callout-primary bd-callout shadow-sm">
+                                        <label class="radio-label">
+                                            <input name="PostPago" type="radio" class="radioValorPago" value="@MontoSesenta" />
+                                            <div id="Op3" class="div-radio-label">
+                                                <h5>Pago del 60%</h5>
+                                                <label class="text-muted" style="margin-bottom:0;">$<label class="inputFormatoVenta">@MontoSesenta</label></label>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>*@
+
+                                <div class="col-md-12 col-sm-12 mt-sm-3" hidden>
+                                    <div class="form-group">
+                                        <label for="Pago" class="form-label">Monto a pagar</label>
+                                        @Html.TextBox("Pago", "", new { @class = "form-control inputCallme text-black" })
+                                    </div>
+                                    <div id="PagoHelpBlock" class="form-text text-muted">
+                                        <span> Ingresa el monto a depositar.</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-5 pl-5 pr-5 text-center">
+                                    <div id="contentbtnReadyPago" class="form-group" style="">
+                                        <a id="btnRealizarPago" class="btn btn-block btn-primary disabled">Realizar Pago</a>
+                                    </div>
+                                    <div id="preloader" class="spinner-border text-primary text-center" role="status" style="display: none; margin: 0 auto;">
+                                        <span class="visually-hidden"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            //content datos tarjeta
+
+                            <div id="contentDataTarget" class="mt-4 pl-4 pr-4" style="display: none;">
+                                <div class="row">
+                                    <div class="col-12" id="viewPago">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="inputNombrePropietario">Titular</label>
+                                            <input type="text" class="form-control inputCallme" id="inputNombrePropietario" onkeypress="return valideName(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="inputNumeroTarjeta">Número de la Tarjeta</label>
+                                            <input type="text" class="form-control inputCallme" id="inputNumeroTarjeta" maxlength="16" placeholder="0000-0000-0000-0000" required />
+                                            <img src="~/Images/klipartz.com.png" width="80" class="imgTarget" />
+                                        </div>
+                                        <div class="form-group row g-2">
+                                            <div class="col-md-6 col-sm-12">
+                                                <label class="form-label" for="fechaTarjeta">Fecha de expiración</label>
+                                                <div id="fechaTarjeta" class="row g-2">
+                                                    <div class="col-5">
+                                                        <input class="form-control inputCallme" id="inputMesTarjeta" maxlength="2" onkeypress="return valideNumer(event)" placeholder="Mes" required />
+                                                    </div>
+                                                    <label class="form-label mt-3"> / </label>
+                                                    <div class="col-5">
+                                                        <input type="text" class="form-control inputCallme" id="inputanioTarjeta" maxlength="2" onkeypress="return valideNumer(event)" placeholder="Año" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="InputCodigo">Código de seguridad</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <label class="View text-primary" id="MostrarPSW" for="ViewCVV">
+                                                                <input type="radio" hidden id="" name="ViewCVV" />
+                                                                <i class="fas fa-eye-slash" id="iconView"></i>
+                                                            </label>
+                                                        </div>
+                                                        <input id="CVV" type="password" class="form-control inputCallme" maxlength="3" placeholder="CVV" onkeypress="return valideNumer(event)" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-md-5 mt-sm-1  pl-5 pr-5 text-center">
+                                        <div id="contentbtnSendPago" class="form-group" style="">
+                                            <input id="btnCancelPago" type="button" class="btn btn-block btn-danger " value="Cancelar" />
+                                        </div>
+                                        <div id="preloader" class="spinner-border text-primary text-center" role="status" style="display: none; margin: 0 auto;">
+                                            <span class="visually-hidden"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-md-5 mt-sm-1 pl-5 pr-5 text-center">
+                                        <div id="contentbtnSendPago" class="form-group" style="">
+                                            <input id="btnSendPago" type="submit" class="btn btn-block btn-primary " value="Pagar" />
+                                        </div>
+                                        <div id="preloadertarget" class="spinner-border text-primary text-center" role="status" style="display: none; margin: 0 auto;">
+                                            <span class="visually-hidden"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        @* content datos cliente *@
+        <div class="col-lg-1 col-md-1 hidden-sm"></div>
+        <div class="index-section-1 col-lg-5 col-md-5 col-sm-12 col-xs-12" style=" margin-top: 12%;">
+            <div class="card text-center text-white">
+                <div class="card-header  text-white" style="background-color: #084b99 !important;">
+                    <h5> Datos de la Cuenta</h5>
+                </div>
+                <div class="card-body" style="background-color: #3282b8 !important;">
+                    <div class="mb-2 row">
+                        <label for="" class="col-sm-5 col-form-label">Nombre del Cliente</label>
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(p => p.nombre_contacto, Model.nombre_contacto, new { @class = "form-control-plaintext inputCallme", @style = "color: #fff !important", @readonly = "readonly" })
+                        </div>
+                    </div>
+
+                    <div class="mb-2 row">
+                        <label for="" class="col-sm-5 col-form-label">Póliza</label>
+                        <div class="col-sm-7">
+                            @Html.TextBoxFor(p => p.IdUnico, Model.IdUnico, new { @class = "form-control-plaintext inputCallme", @style = "color: #fff !important", @readonly = "readonly" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="FormadePago" class="row mt-4 text-center">
+                <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1>Realizar pago con asistencia telefónica</h1>
+                    <button type="button" class="btn BtnLanding rounded-circle mt-4 mb-4 pt-4 pb-4 text-center" data-toggle="modal" data-target="#ModalCallMe">
+                        <i class="fas fa-comments-dollar" style="font-size: 3rem;"></i>
+                    </button>
+                </div>
+                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                </div>
+
+            </div>
+        </div>
+        <!-- contenedor Callme -->
+        <div class="modal fade" id="ModalCallMe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog bg-white">
+                <div class="modal-content text-center">
+                    <div class="container" style="background-color:#fff ; background-size: cover; padding: 10%">
+                        <button type="button" class="close" style="color: #1B5630;" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="container" style="background: #ffffff; color: #1B5630; border-radius: 15px;">
+                            <div class="pt-3 pb-5">
+                                @*<img src="~/Images/LogoDataVoice.png" width="200" alt="" srcset="">*@
+                                <img class="imgface" src="https://www.zurich.com.mx/-/media/af8989cfdd7049ee86735bdccc8d2e7e.ashx?h=71&la=es-mx&w=114" style="width: 110px" />
+                            </div>
+                            <div class="pt-2 pb-4">
+                                <h1 class="titleData">
+                                    ¿Quieres pagar?
+                                </h1>
+                            </div>
+                            <div class="pt-2 pb-4">
+                                <h2 class="titleData">
+                                    Nosotros te marcamos
+                                </h2>
+                            </div>
+                            <div class="pt-2 pb-4">
+                                <div class="form-group" style="display: inline-block">
+                                    <input type="tel" name="" id="saldoTotal" class="form-control inputCallme" placeholder="Escribe Tu Teléfono">
+                                </div>
+                            </div>
+                            <div class="">
+                                <button id="btnCallme" type="button" class="btn BtnLanding rounded-circle mt-4 mb-4 pt-4 pb-4 text-center" style=" border-color: #292929; border-style: solid; border-width: 5px;">
+                                    <i class="fas fa-phone-alt" style="font-size: 3rem;"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<div id="alerta" hidden>
+                @ViewBag.MessageProblema
+            </div>*@
+
+        <input id="Respuesta" type="hidden" value="@ViewBag.Respuesta" />
+    </div>
+</div>
+<script>
+    //$(function () {
+    //    var error = document.getElementById("alerta").innerText;
+    //    if (error != "") {
+    //        alert(error);
+    //    }
+    //});
+
+</script>
+
+<script src="~/Scripts/ScriptLanding.js"></script>
+<script src="~/Scripts/ScriptValidaciones.js"></script>

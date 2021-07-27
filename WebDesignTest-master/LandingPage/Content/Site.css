@@ -1,0 +1,215 @@
+﻿@font-face {
+    font-family: Poppins-Black;
+    src: url(fonts/Poppins-Black.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(fonts/Poppins-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: Poppins-Regular, Poppins-Black, sans-serif !important;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+
+.inputCallme {
+    /* padding: 25px 0 0px 1px; */
+    border: none !important;
+    border-bottom: 2px solid #ccc !important;
+    color: #fff;
+    background-color: transparent !important;
+}
+
+.BtnLanding {
+    border-color: #292929 !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+    width: 100px;
+    transition: all 0.7s;
+}
+
+    .BtnLanding svg {
+        color: #333 !important;
+    }
+
+    .BtnLanding:hover {
+        background-color: #0f4c75;
+        border: 3px solid #0f4c75 !important;
+    }
+
+        .BtnLanding:hover svg {
+            color: #fff !important;
+        }
+/*
+    .BtnPago svg {
+        color: #fff !important;
+    }*/
+
+.titleData {
+    color: #0f4c75;
+}
+
+/*animacion*/
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+/*-/-/-/-/-----------------   content    ------------*/
+.index-main-background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 226px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    background: linear-gradient(90deg, rgba(114,184,240,1) 0%, rgba(45,93,158,1) 50%, rgba(8,75,153,1) 100%);
+}
+
+.index-title {
+    margin-top: 150px;
+    margin-bottom: 10px;
+}
+
+.index-title-span {
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+}
+
+.index-section-1 {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+
+.contenedorBanco {
+    position: relative;
+    padding: 10px;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.contenedorAgradecimiento {
+    position: relative;
+    padding: 29px 10px;
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+}
+
+#ContentPago {
+    /*max-height: 460px;*/
+}
+
+@media only screen and (max-width: 600px) {
+    #ContentPago {
+        margin-top: 15px;
+        /*max-height: 530px;*/
+    }
+}
+
+.bd-callout-primary {
+    border-left-color: #3483fa !important;
+}
+
+    .bd-callout-primary h5 {
+        color: #3483fa;
+    }
+
+.bd-callout {
+    padding: .80rem;
+    margin-top: 0.50rem;
+    margin-bottom: 0.50rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+
+.inputFormatoVenta {
+    border: 0;
+    color: #6c757d !important;
+}
+
+.radio-label {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.div-radio-label {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+    background-image: none;
+    padding-left: 24px;
+}
+
+.imgTarget {
+    position: absolute;
+    bottom: 127px;
+    right: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .imgTarget {
+        position: absolute;
+        bottom: 207px;
+        right: 20px;
+    }
+    .display-3 {
+        font-size: 3.0rem !important;
+        font-weight: 300 !important;
+        line-height: 1.2 !important;
+    }
+}
+
+.View {
+    padding: 7px;
+    position: relative;
+    right: 0;
+    cursor:pointer;
+}

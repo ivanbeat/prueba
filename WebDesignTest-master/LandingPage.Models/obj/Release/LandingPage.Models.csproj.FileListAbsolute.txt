@@ -1,0 +1,12 @@
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\bin\Release\LandingPage.Models.dll
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\bin\Release\LandingPage.Models.pdb
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.csprojAssemblyReference.cache
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.dll
+D:\Desarrollo\Sistemas\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.pdb
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\bin\Release\LandingPage.Models.dll
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\bin\Release\LandingPage.Models.pdb
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.csprojAssemblyReference.cache
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.csproj.CoreCompileInputs.cache
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.dll
+D:\DataVoice\Desarrollo\Sitios\LandingPage\LandingPage.Models\obj\Release\LandingPage.Models.pdb

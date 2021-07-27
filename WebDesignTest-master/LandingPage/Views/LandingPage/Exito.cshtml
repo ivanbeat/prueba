@@ -1,0 +1,34 @@
+﻿{
+    
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exito</title>
+</head>
+<body style="">
+    <script>
+        $('body').css("Background", "#fbfbfb");
+    </script>
+    <div class="container">
+        <div class="jumbotron text-center bg-white mt-5">
+            <div class="col-12 d-block">
+                <h1 class="display-3">Felicidades!!</h1>
+            </div>
+            <div class="contenedorAgradecimiento bg-primary rounded-circle fadeInUp">
+                <img src="~/Images/thanks.png" width="100" />
+            </div>
+            <p class="lead">Te informamos </p>
+            <h3>@ViewBag.MenssageExito</h3>
+            <p class="lead">
+                @Html.ActionLink("Volver a Inicio", "Index", "")
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
